@@ -1,0 +1,185 @@
+/* INDEX */
+
+
+/* NETFLIX FONTS */
+@font-face {
+    font-family: "Netflix Sans Bk";
+    src: url("./assets/fonts/NetflixSansBlack.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Netflix Sans Regular";
+    src: url("./assets/fonts/NetflixSansRegular.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Netflix Sans Medium";
+    src: url("./assets/fonts/NetflixSansMedium.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Netflix Sans Thin";
+    src: url("./assets/fonts/NetflixSansThin.ttf");
+    font-weight: 100;
+    font-style: normal;
+}
+
+  /* COLOR VARIABLES */
+:root {
+    --white: #fff;
+    --light-gray-1: #dddd;
+    --light-gray-2: #e5e5e5;
+    --gray-1: #8a8a8a;
+    --gray-2: #808080;
+    --black: #141414;
+    --red: #b9090b;
+}
+
+  /* GENERAL SETTINGS */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h2 {
+    font-family: "Netflix Sans Regular";
+}
+
+body {
+    background-color: var(--black);
+}
+
+
+
+/************************************************
+    INDEX.HTML SETTINGS
+  *************************************************/
+
+
+.whoIsWatching {
+    background-color: var(--black);
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.logo-section {
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    height: 7rem;
+    justify-content: flex-start;
+    margin: auto;
+    width: 95vw;
+}
+
+.logo-section a img {
+    cursor: pointer;
+    height: 4rem;
+    width: 10rem;
+}
+
+.main-div {
+    align-items: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.main-div h1 {
+    font-size: 6.5rem;
+    font-family: "Netflix Sans Regular";
+    font-weight: 400;
+}
+
+.member-div {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+  /* PROFILE BOXES */
+.member-div .btn,
+.addIcon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+    height: 10vw;
+    margin-top: 64px;
+    margin-right: 3.5rem;
+    max-height: 20rem;
+    max-width: 20rem;
+    min-height: 8.4rem;
+    min-width: 8.4px;
+    outline: none;
+    position: relative;
+    width: 10vw;
+}
+
+  /* PROFILE IMAGES */
+.member-div .p1 .btn {
+    background-image: url("./assets/images/ProfileCard.png");
+}
+.member-div .p2 .btn {
+    background-image: url("./assets/images/ProfileCard\ \(1\).png");
+}
+.member-div .p3 .btn {
+    background-image: url("./assets/images/ProfileCard\ \(2\).png");
+}
+.member-div .p4 .btn {
+    background-image: url("./assets/images/ProfileCard\ \(3\).png");
+}
+.member-div .p5 .btn {
+    background-image: url("./assets/images/ProfileCard\ \(4\).png");
+}
+.member-div .btn:hover {
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+/* USERS NAMES & ADD PROFILE SETTINGS*/
+.member-div .btn span {
+    bottom: -6rem;
+    color: var(--gray-1);
+    font-size: 2rem;
+    left: 0;
+    position: absolute;
+    text-transform: capitalize;
+    width: inherit;
+}
+
+.newProfile {
+    background-color: transparent;
+}
+
+.newProfile:hover{
+    background-color: var(--white);
+}
+
+.manageProfile {
+    background-color: transparent;
+    border: 1px solid var(--gray-1);
+    color: var(--gray-1);
+    cursor: pointer;
+    padding: 0.8rem 2.6rem;
+    margin-top: 10rem;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+.manageProfile:hover {
+    border: 1px solid var(--white);
+    color: var(--white);
+}
