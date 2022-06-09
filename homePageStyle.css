@@ -46,8 +46,10 @@
   padding: 0;
 }
 
-h2 {
+h3 {
   font-family: "Netflix Sans Regular";
+  color: var(--white);
+  margin-left: 32px;
 }
 
 body {
