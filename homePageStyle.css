@@ -213,16 +213,23 @@ color: var(--white);
 padding-left: 52px;
 padding-bottom: 12px;
 }
+
 /* Container */
 .container {
 background: transparent;
 margin-top: -100px;
 z-index: 99;
 }
+
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* row section */
 .row {
 height: 180px;
 }
+
 .row-poster .card img {
 display: block;
 }
@@ -232,48 +239,60 @@ width: 100%;
 display: flex;
 color: #fff;
 padding-left: 44px;
+overflow-y: hidden;
+}
+
+
+::-webkit-scrollbar {
+  background: transparent;
 }
 
 .poster-container {
 display: flex;
 }
+
+
 /* single card section */
 .card-container {
 width: 215px;
-position: relative;
 }
 
 
-.card {
-transition: all 0.2s ease-in-out;
-border-radius: 4px;
+.general-container {
+width: 215px;
+padding: 4px;
 }
+
 
 /* HOVER EFFECT ON IMG */
 .cards .card{
-padding: 16px 2px;
+padding: 14px 2px;
 transition: 250ms all;
 }
 
-.cards .card:hover{
-height: 276px;
-width: 215px;
-transform: scale(1.5);
-z-index: 3;
+
+.general-container:hover{
+  height: 290px;
+  width: 215px;
+  transform: scale(1.2);
+  z-index: 3;
 }
+
 
 /* box info section */
 .card__info {
 display: none;
 padding: 8px;
+height: 140px;
 width: 100%;
 }
+
 /* box info display when hover on card */
-.cards .card:hover .card__info {
+.cards .general-container:hover .card__info {
 display: block;
 position: absolute;
-margin: 0 1.5px;
-bottom: 0;
+margin: 0 3.4px;
+bottom: 0px;
 left: 0;
 background: black;
 transition: all 0.2s ease-in-out;
@@ -296,7 +315,7 @@ flex-direction: row-reverse;
 width: 100%;
 }
 .box-button .material-symbols-outlined {
-font-size: 40px;
+font-size: 20px;
 color: var(--light-gray-2);
 }
 .section-info {
