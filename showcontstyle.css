@@ -34,6 +34,7 @@
 }  
 * {
     font-family: "Netflix Sans Thin";
+    color: white;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -41,6 +42,41 @@
 /*Container*/
 .container{
     background-color: #141414;
-    color: white;
     display: flex;
+    flex-direction: column;
+    margin: 16px auto;
+    max-width: 560px;
+    height: 800px;
+}
+/*Top*/
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.show{
+    border-radius: 4px;
+    background-color: #242424;
+}
+.show option{
+    padding: 60px;
+}
+/*Mid*/
+.mid{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+.episode{
+    display: flex;
+    align-items: center;
+}
+.episode img{
+    height: 80px;
+    border-radius: 4px;
+}
+.description{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 13px;
 }
