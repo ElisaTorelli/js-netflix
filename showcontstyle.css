@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "Netflix Sans Bk";
+    src: url("./assets/fonts/NetflixSansBlack.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+  @font-face {
+    font-family: "Netflix Sans Regular";
+    src: url("./assets/fonts/NetflixSansRegular.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+  @font-face {
+    font-family: "Netflix Sans Medium";
+    src: url("./assets/fonts/NetflixSansMedium.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+  @font-face {
+    font-family: "Netflix Sans Thin";
+    src: url("./assets/fonts/NetflixSansThin.ttf");
+    font-weight: 100;
+    font-style: normal;
+}
+/*General*/
+:root {
+    --white: #fff;
+    --light-gray-1: #dddd;
+    --light-gray-2: #e5e5e5;
+    --gray-1: #8a8a8a;
+    --gray-2: #808080;
+    --black: #141414;
+    --red: #b9090b;
+}  
+* {
+    font-family: "Netflix Sans Thin";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*Container*/
+.container{
+    background-color: #141414;
+    color: white;
+    display: flex;
+}
