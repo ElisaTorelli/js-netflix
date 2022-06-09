@@ -3,7 +3,8 @@ import { getApiKey } from "./env.js";
 let apiKey = getApiKey();
 
 
-let cardsContainer = document.querySelector(".poster-container")
+let cardsContainer = document.querySelector(".poster-container");
+let cards = document.querySelector(".cards");
 let leftArrow = document.querySelector(".left");
 let rightArrow = document.querySelector(".right");
 
@@ -66,4 +67,13 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
         </div>
         `
     })
+})
+
+
+rightArrow.addEventListener('click', () =>{
+    document.querySelector('.cards').scrollLeft += 150;
+})
+
+leftArrow.addEventListener('click', () =>{
+    document.querySelector('.cards').scrollLeft -= 150;
 })
