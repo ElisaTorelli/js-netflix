@@ -45,8 +45,11 @@
     display: flex;
     flex-direction: column;
     margin: 16px auto;
-    max-width: 560px;
+    max-width: 600px;
     height: 800px;
+}
+.space{
+    margin: 8px 16px;
 }
 /*Top*/
 .top{
