@@ -67,15 +67,22 @@
 .mid{
     display: flex;
     flex-direction: column;
-    margin-top: 12px;
+    margin-top: 16px;
 }
 .episode{
     display: flex;
     align-items: center;
+    border-bottom: solid 1px #808080;
+    border-top: solid 1px #808080;
+    padding: 8px 0;
 }
 .episode img{
     height: 80px;
     border-radius: 4px;
+    padding-right: 14px;
+}
+.episode h3{
+    padding-right: 14px;
 }
 .description{
     display: flex;
