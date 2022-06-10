@@ -163,7 +163,6 @@ HOME-PAGE.HTML SETTINGS
   font-family: "Netflix Sans Thin";
   padding-bottom: 30px;
   vertical-align: middle;
-  padding-left: 16px;
 }
 
 /* MainBannerGeneral */
@@ -485,8 +484,27 @@ list-style-type: none;
     padding-left: 50px;
   }
 
-  .banner__image img{
-    padding-top: 200px;
+  h1{
+    margin-top: 80px;
+    margin-bottom: -10px;
+  }
+
+  .top__red__badge{
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .banner__contents{
+    margin-top: -600px;
+  }
+
+  .row,
+  h3{
+    margin-top: 40px;
+  }
+
+  h3{
+    font-size: 16px;
   }
 }
 
@@ -506,8 +524,23 @@ list-style-type: none;
     display: none;
   }
 
+  .banner__contents{
+    padding-top: 250px;
+  }
+
+  h1{
+    font-size: 24px;
+    display: flex;
+    padding-right: 30px;
+    padding-bottom: 50px;
+  }
+
   .logo{
     padding-top: 15px;
+  }
+
+  .netflix__logo{
+    display: block;
   }
 
   .right__header__links ul{
