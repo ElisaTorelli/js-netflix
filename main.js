@@ -3,18 +3,27 @@ import { getApiKey } from "./env.js";
 let apiKey = getApiKey();
 
 
-let cardsContainer = document.querySelector(".poster-container");
-let cards = document.querySelector(".cards");
+let cardsContainer = document.querySelector(".poster-container")
 let leftArrow = document.querySelector(".left");
 let rightArrow = document.querySelector(".right");
+let container = document.querySelector(".container")
+
+let appendCard = document.querySelector(".poster-container")
 
 
-fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
-.then(res => res.json())
-.then((data) => {
-    let results = data.results;
-    
-    results.forEach(element => {
+const getMovies = async()=>{
+    let resultApi = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
+    resultApi = await resultApi.json()
+    return resultApi
+}
+
+getMovies().then(res => { 
+    displayMovies(res.results)
+});
+
+
+function displayMovies(res){
+    res.map(element=>{
         cardsContainer.innerHTML +=
         `
         <div class="general-container">
@@ -67,13 +76,39 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
         </div>
         `
     })
-})
+}
+
+function scrollEffect(){
+    rightArrow.addEventListener("click", ()=>{
+        document.querySelector('.cards').scrollLeft += 150;
+    });
+    leftArrow.addEventListener("click", ()=>{
+        document.querySelector('.cards').scrollLeft -= 150;
+    });
+}
+
+scrollEffect()
 
 
-rightArrow.addEventListener('click', () =>{
-    document.querySelector('.cards').scrollLeft += 150;
-})
 
-leftArrow.addEventListener('click', () =>{
-    document.querySelector('.cards').scrollLeft -= 150;
-})
+function rowRepeat(container, res){
+    for(let i=1; i<5; i++){
+        container.innerHTML += `
+        <div class="row">
+            <h3>Popolari su Netflix</h3>
+            <!-- cards -->
+            <div class="cards invisible-scrollbar">
+            <button class="freccia right"><img src="./assets/images/Vector-right.png" alt="Destra"></button>
+            <button class="freccia left"><img src="./assets/images/Vector-left.png" alt="Sinistra"></button>
+
+            <div class="poster-container">
+                
+            </div>
+            </div>
+        </div>
+        `
+        
+    }
+}
+
+rowRepeat(container)

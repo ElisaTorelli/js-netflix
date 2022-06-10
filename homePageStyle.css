@@ -260,7 +260,6 @@ width: 215px;
 
 .general-container {
 width: 215px;
-padding: 4px;
 }
 
 
@@ -291,7 +290,6 @@ width: 100%;
 .cards .general-container:hover .card__info {
 display: block;
 position: absolute;
-margin: 0 3.4px;
 bottom: 0px;
 left: 0;
 background: black;
