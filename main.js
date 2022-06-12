@@ -6,9 +6,8 @@ let apiKey = getApiKey();
 let cardsContainer = document.querySelector(".poster-container")
 let leftArrow = document.querySelector(".left");
 let rightArrow = document.querySelector(".right");
-let container = document.querySelector(".container")
-
-let appendCard = document.querySelector(".poster-container")
+let container = document.querySelector(".container");
+let row = document.querySelector(".row");
 
 
 const getMovies = async()=>{
@@ -16,6 +15,7 @@ const getMovies = async()=>{
     resultApi = await resultApi.json()
     return resultApi
 }
+
 
 getMovies().then(res => { 
     displayMovies(res.results)
@@ -78,6 +78,7 @@ function displayMovies(res){
     })
 }
 
+//SCROLL ARROWS
 function scrollEffect(){
     rightArrow.addEventListener("click", ()=>{
         document.querySelector('.cards').scrollLeft += 150;
@@ -91,24 +92,3 @@ scrollEffect()
 
 
 
-function rowRepeat(container, res){
-    for(let i=1; i<5; i++){
-        container.innerHTML += `
-        <div class="row">
-            <h3>Popolari su Netflix</h3>
-            <!-- cards -->
-            <div class="cards invisible-scrollbar">
-            <button class="freccia right"><img src="./assets/images/Vector-right.png" alt="Destra"></button>
-            <button class="freccia left"><img src="./assets/images/Vector-left.png" alt="Sinistra"></button>
-
-            <div class="poster-container">
-                
-            </div>
-            </div>
-        </div>
-        `
-        
-    }
-}
-
-rowRepeat(container)

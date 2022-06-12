@@ -1,4 +1,20 @@
-/* INDEX */
+/* INDEX 
+  1.NETFLIX FONTS
+  2.COLOR VARIABLES
+  3.GENERAL SETTINGS
+  4.HOME-PAGE.HTML SETTINGS
+    a)HomePageBannerImage
+    b)BannerTitleImage
+    c)BannerTitleDescription
+    d)Top10RedIcon&BestTvSeries
+    e)MainBannerGeneral
+    f)BannerButtonsGeneral
+    g) WhiteButton
+    h)LightGrayButton
+  5.CONTAINER
+    a)row section
+
+*/
 
 
 
@@ -54,6 +70,15 @@ h3 {
 
 body {
   background-color: var(--black);
+}
+
+h1{
+  font-size: 50px;
+  text-transform: uppercase;
+  color: var(--white);
+  font-family: "Netflix Sans Regular";
+  margin-left: 60px;
+  margin-bottom: 40px;
 }
 
 
@@ -113,26 +138,17 @@ HOME-PAGE.HTML SETTINGS
 
 
 /* HomePageBannerImage */
-.banner {
-  background-image: url("./assets/images/MoviePoster.png");
-  background-size: cover;
-  background-position: center;
-  color: var(--white);
-  object-fit: contain;
-  height: 750px;
-}
-
-/* BannerTitleImage */
-.banner__image img {
-  padding-top: 170px;
-  margin-right: 100px;
-  width: 29%;
+.background-video{
+  width: 100%;
+  height: 100%;
+  margin-top: -10px;
+  padding-left: 14px;
 }
 
 /* BannerTitleDescription */
 .banner__contents {
-  height: 16px;
   margin-left: 30px;
+  margin-top: -600px;
   padding-top: 10px;
 }
 
@@ -147,7 +163,6 @@ HOME-PAGE.HTML SETTINGS
   font-family: "Netflix Sans Thin";
   padding-bottom: 30px;
   vertical-align: middle;
-  padding-left: 16px;
 }
 
 /* MainBannerGeneral */
@@ -160,6 +175,7 @@ HOME-PAGE.HTML SETTINGS
 }
 
 .banner__description {
+  color: var(--white);
   width: 660px;
   height: 132px;
   font-family: "Netflix Sans Regular";
@@ -175,6 +191,7 @@ HOME-PAGE.HTML SETTINGS
 /* BannerButtonsGeneral */
 .banner__buttons {
   margin-top: 16px;
+  padding-bottom: 45px;
 }
 .banner__button {
   cursor: pointer;
@@ -214,10 +231,10 @@ padding-left: 52px;
 padding-bottom: 12px;
 }
 
-/* Container */
+/* CONTAINER */
 .container {
 background: transparent;
-margin-top: -100px;
+margin-top: -50px;
 z-index: 99;
 }
 
@@ -227,6 +244,7 @@ z-index: 99;
 
 /* row section */
 .row {
+  margin: 100px 0;
 height: 180px;
 }
 
@@ -255,11 +273,12 @@ display: flex;
 /* single card section */
 .card-container {
 width: 215px;
+border-radius: 3px;
 }
-
 
 .general-container {
 width: 215px;
+margin: 5px;
 }
 
 
@@ -370,10 +389,6 @@ padding: 80px 20px;
 }
 
 
-
-
-
-
 /* FOOTER */
 .footer {
 max-width: 75%;
@@ -448,4 +463,151 @@ height: 30%;
 
 .second_link {
 list-style-type: none;
+}
+
+
+
+
+
+
+/************************************************ 
+  MEDIA QUERIES (max-width 987px)
+*************************************************/
+@media all and (max-width: 987px) {
+  .dropdown-icon,
+  .ringbell-icon,
+  .profile-icon{
+    display: none;
+  }
+
+  .left__header__links ul li{
+    padding-left: 50px;
+  }
+
+  h1{
+    margin-top: 80px;
+    margin-bottom: -10px;
+  }
+
+  .top__red__badge{
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .banner__contents{
+    margin-top: -600px;
+  }
+
+  .row,
+  h3{
+    margin-top: 40px;
+  }
+
+  h3{
+    font-size: 16px;
+  }
+}
+
+
+
+/************************************************ 
+  MEDIA QUERIES (max-width 768px)
+*************************************************/
+@media all and (max-width: 768px) {
+  /* GeneralSettings */
+  /* .main-header, */
+  .top__red__badge,
+  .banner__description,
+  .left__header__links ul,
+  .search-icon,
+  .dropdown-icon{
+    display: none;
+  }
+
+  .banner__contents{
+    padding-top: 250px;
+  }
+
+  h1{
+    font-size: 24px;
+    display: flex;
+    padding-right: 30px;
+    padding-bottom: 50px;
+  }
+
+  .logo{
+    padding-top: 15px;
+  }
+
+  .netflix__logo{
+    display: block;
+  }
+
+  .right__header__links ul{
+    width: 10%;
+    display: flex;
+    line-height: 10px;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .ringbell-icon {
+    display: block;
+  }
+
+  .main-header {
+    background-color: transparent;
+    height: 0;
+  }
+
+  body{
+    max-width: 768px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* TitleMainBannerSettings */
+  .navbar {
+    background-color: transparent;
+  }
+
+  .banner__image img {
+    padding-top: 300px;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  #gray_box {
+    display: none;
+  }
+
+  /* footer */
+  .footer .footer-cols{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+
+
+  .footer ul li{
+    list-style-type: none;
+  }
+}
+
+/************************************************ 
+  MEDIA QUERIES (max-width 768px) for INDEX.HTML
+*************************************************/
+@media all and (max-width: 768px) {
+  h1 {
+    text-align: center;
+  }
+
+  .member-div .btn,
+  .addIcon {
+    min-height: 10px;
+  }
 }
