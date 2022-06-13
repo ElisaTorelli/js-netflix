@@ -3,28 +3,24 @@ import { getApiKey } from "./env.js";
 let apiKey = getApiKey();
 
 
-let cardsContainer = document.querySelector(".poster-container")
+let cardsContainer = document.querySelectorAll(".poster-container")
 let leftArrow = document.querySelector(".left");
 let rightArrow = document.querySelector(".right");
 let container = document.querySelector(".container");
-let row = document.querySelector(".row");
-
-
+let row = document.querySelectorAll(".row");
 const getMovies = async()=>{
     let resultApi = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
     resultApi = await resultApi.json()
     return resultApi
 }
-
-
-getMovies().then(res => { 
-    displayMovies(res.results)
-});
-
-
-function displayMovies(res){
-    res.map(element=>{
-        cardsContainer.innerHTML +=
+cardsContainer.forEach((element)=>{
+    getMovies().then(res => {
+        displayMovies(element, res.results)
+    });
+})
+function displayMovies(container, res){
+    res.forEach(element=>{
+        container.innerHTML +=
         `
         <div class="general-container">
             <div class="card">
@@ -77,7 +73,6 @@ function displayMovies(res){
         `
     })
 }
-
 //SCROLL ARROWS
 function scrollEffect(){
     rightArrow.addEventListener("click", ()=>{
@@ -87,7 +82,6 @@ function scrollEffect(){
         document.querySelector('.cards').scrollLeft -= 150;
     });
 }
-
 scrollEffect()
 
 
