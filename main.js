@@ -10,6 +10,7 @@ let row = document.querySelectorAll(".row");
 let posterContainer = document.querySelector(".row-poster-container");
 let numberContainer = document.querySelector(".container-movie");
 
+
 const getMovies = async()=>{
     let resultApi = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
     resultApi = await resultApi.json()
