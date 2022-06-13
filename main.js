@@ -9,6 +9,7 @@ let container = document.querySelector(".container");
 let row = document.querySelectorAll(".row");
 let posterContainer = document.querySelector(".row-poster-container");
 let numberContainer = document.querySelector(".container-movie");
+
 let displayDialogContainer = document.querySelector('.dialog-container');
 let dropDownIcon = document.getElementById('circle-down-icon');
 let closeIcon = document.getElementById('close-icon');
@@ -62,7 +63,7 @@ function displayMovies(container, res){
                     </div>
                     <div class="section-info">
                         <div class="info">
-                            <p><strong>90% compatibile</strong></p>
+                            <p><strong class="text">90% compatibile</strong></p>
                         </div>
                         <div class="info">
                             <span class="vm14">VM14</span>
@@ -87,7 +88,7 @@ function displayMovies(container, res){
 }
 
 //SCROLL ARROWS
-function scrollEffect(){
+function scrollEffect(res){
     rightArrow.addEventListener("click", ()=>{
         document.querySelector('.cards').scrollLeft += 150;
     });
@@ -194,11 +195,11 @@ episodeListDialog();
 
 
 // DIALOG ACTION
-// function openDialog(){
-//     dropDownIcon.addEventListener('click', () => {
-        // displayDialogContainer.addClassList('display');
-//         alert("Prova");
-//     })
-// }
+function openDialog(){
+    dropDownIcon.addEventListener('click', () => {
+        displayDialogContainer.addClassList('display');
+        alert("Prova");
+    })
+}
 
-// openDialog();
+openDialog();

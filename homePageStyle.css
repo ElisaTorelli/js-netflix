@@ -1,28 +1,51 @@
-/* INDEX 
+/* INDEX:
+
   1.NETFLIX FONTS
   2.COLOR VARIABLES
   3.GENERAL SETTINGS
   4.HOME-PAGE.HTML SETTINGS
-    a)HomePageBannerImage
-    b)BannerTitleImage
+	a)NetflixLogoSettings
+    b)HomePageBannerImage
     c)BannerTitleDescription
     d)Top10RedIcon&BestTvSeries
     e)MainBannerGeneral
     f)BannerButtonsGeneral
-    g) WhiteButton
+    g)WhiteButton
     h)LightGrayButton
   5.CONTAINER
-    a)row section
-    b)single card section
+    a)rowSection
+    b)singleCardSection
   6)HOVER EFFECT ON IMG
-    a)box info section
-    b)box info display when hover on card
-  7)ARROW
-  8)FOOTER
-  9)MEDIA QUERIES (max-width 987px)
-  10)MEDIA QUERIES (max-width 768px)
-  11)MEDIA QUERIES (max-width 768px) for INDEX.HTML
-  12)MEDIA QUERIES (max-width 480px)
+    a)boxInfoSection
+    b)boxInfoDisplayWhenHover
+  7.ARROW
+  8.POSTER IMG
+  9.NUMBER IMG
+	a)rowNumber
+  10.DIALOG MAIN CONTAINER
+	a)generalDialogContainer
+    b)backgroundImage
+    c)dialogButton
+    d)firstIcon
+    e)secondIcon
+    f)closeIconOption
+	g)rowInfoDescription
+    h)paragraphInfo
+	i)plotInfo
+	j)castList
+  11.DIALOG EPISODE LIST
+	a)midSection
+	b)episodeSettings
+  10)FOOTER
+  11)MEDIA QUERIES (max-width 987px)
+  12)MEDIA QUERIES (max-width 768px)
+	a.TitleMainBannerSettings
+	b.footer
+  13)MEDIA QUERIES (max-width 768px) for INDEX.HTML
+  14)MEDIA QUERIES (max-width 480px)
+	a.logo
+	b.filmTitle
+  
 */
 
 
@@ -69,13 +92,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Netflix Sans Regular";
 }
 
 h3 {
-  font-family: "Netflix Sans Regular";
   color: var(--white);
   margin-left: 32px;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 body {
@@ -91,11 +114,18 @@ h1{
   font-size: 50px;
   text-transform: uppercase;
   color: var(--white);
-  font-family: "Netflix Sans Regular";
   margin-left: 60px;
   margin-bottom: 40px;
 }
 
+.text{
+  color: green;
+  font-size: 12px;
+}
+
+.poster__title{
+  font-size: 17px;
+}
 
 /************************************************
 HOME-PAGE.HTML SETTINGS 
@@ -108,6 +138,7 @@ HOME-PAGE.HTML SETTINGS
   height: 60px;
   position: fixed;
   background-color: var(--black);
+  z-index: 999;
 }
 
 .logo {
@@ -244,8 +275,8 @@ HOME-PAGE.HTML SETTINGS
 
 .container h2 {
 color: var(--white);
-padding-left: 52px;
-padding-bottom: 12px;
+padding-left: 30px;
+padding-bottom: 20px;
 }
 
 /* CONTAINER */
@@ -259,7 +290,7 @@ z-index: 99;
   display: none;
 }
 
-/* row section */
+/* rowSection */
 .row {
   margin: 40px 0;
   height: 180px;
@@ -278,13 +309,11 @@ padding-left: 44px;
 overflow-y: hidden;
 }
 
-
 .poster-container {
 display: flex;
 }
 
-
-/* single card section */
+/* singleCardSection */
 .card-container {
 width: 215px;
 border-radius: 3px;
@@ -302,7 +331,6 @@ padding: 14px 2px;
 transition: 250ms all;
 }
 
-
 .general-container:hover{
   height: 290px;
   width: 215px;
@@ -311,7 +339,7 @@ transition: 250ms all;
 }
 
 
-/* box info section */
+/* boxInfoSection */
 .card__info {
 display: none;
 padding: 8px;
@@ -319,7 +347,7 @@ height: 140px;
 width: 100%;
 }
 
-/* box info display when hover on card */
+/* boxInfoDisplayWhenHover */
 .cards .general-container:hover .card__info {
 display: block;
 position: absolute;
@@ -376,12 +404,16 @@ color: green;
 
 .show-description {
 width: 100%;
-font-size: 14px;
+font-size: 12px;
 }
 
 .show-description ul {
 display: flex;
 justify-content: space-around;
+}
+
+.show-description ul li{
+  list-style-type: none;
 }
 
 
@@ -435,7 +467,7 @@ padding: 80px 20px;
 
 
 /* NUMBER IMG */
-/* Row number */
+/* rowNumber */
 .row-number {
   margin-top: 32px;
   width: 100%;
@@ -452,18 +484,20 @@ padding: 80px 20px;
 .container-movie {
   display: flex;
 }
+
 .number-movie {
   display: inline-block;
   height: 206px;
   line-height: 206px;
   font-size: 300px;
-  font-weight: 700;
+  font-weight: 500;
   -webkit-text-stroke: 1px white;
   color: black;
   position: relative;
   margin-right: -28px;
   z-index: 1;
 }
+
 .movie {
   position: relative;
   z-index: 2;
@@ -473,20 +507,23 @@ padding: 80px 20px;
 }
 
 .img-number {
-  height: 205px;
+  height: 220px;
   width: 145px;
+  margin-left: -20px;
+  margin-right: 12px;
 }
 
 .top10{
-  font-family: "Netflix Sans Regular";
+  font-size: 16px;
 }
 
 
-/*MAIN CONTAINER*/
+/*DIALOG MAIN CONTAINER*/
 .display{
   display: block;
 }
 
+/* generalDialogContainer */
 .dialog-container{
   display: none;
   font-family: "Netflix Sans Regular";
@@ -502,13 +539,14 @@ padding: 80px 20px;
   margin-top: -100px;
   margin-left: -100px;
   background-color: var(--black);
-  z-index: 9999999;
+  z-index: 999999;
 }
-/*IMAGE BACKGROUND CONTAINER*/
+
+/* backgroundImage */
 .img-b{
   width: 100%;
 }
-/* BannerButtonsGeneral */
+/* dialogButton */
 .dialog__banner__button {
   cursor: pointer;
   outline: none;
@@ -527,23 +565,25 @@ padding: 80px 20px;
   width: 200px;
   font-size: 16px;
 }
+
 .dialog__banner__button img {
   vertical-align: middle;
   padding-right: 20px;
 }
 
 /* WhiteButton */
-#white-button {
+/* #white-button {
   color: var(--black);
   background-color: #fff;
-}
+} */
 
 /* LightGrayButton */
-#lightgray-btn {
+/* #lightgray-btn {
   background-color: rgba(121, 112, 112, 0.322);
   color: var(--white);
-}
-/*ICON CHECK*/
+} */
+
+/* firstIcon*/
 .check{
     position: relative;
     top:-130px;  
@@ -552,7 +592,8 @@ padding: 80px 20px;
     padding: 0px;
     right: 20px;
 }
-/*ICON RECOMMEND*/
+
+/* secondIcon*/
 .recommend{
     position: relative;
     top:-130px;  
@@ -561,7 +602,8 @@ padding: 80px 20px;
     padding: 0px;
     right: 30px;
 }
-/*ICON CLOSE DIALOG*/
+
+/* closeIconOption */
 .close{
   position: absolute;
   background-color:transparent;
@@ -569,7 +611,8 @@ padding: 80px 20px;
   right: 0;
   top: 0;
 }
-/*ROW INFORMATION*/
+
+/* rowInfoDescription */
 .row-info{
     background-color:var(--black);
     border: 2px solid var(--black);
@@ -581,7 +624,8 @@ padding: 80px 20px;
     flex-direction: row;
     
 }
-/*PARAGRAPH INFORMATION*/
+
+/* paragraphInfo */
 .p-info{
     color:green;
     margin-left: 20px;
@@ -589,11 +633,13 @@ padding: 80px 20px;
     display: flex;
     
 }
+
 .p-info2{
   color: #fff;
   font-size: 15px;
   margin-left:6px;
 }
+
 .p-info3{
     color: #fff;
     border: 1px solid white;
@@ -602,6 +648,7 @@ padding: 80px 20px;
     font-size: 15px;
     margin-left:6px;
 }
+
 .p-info4{
   color: #fff;
   border: 1px solid white;
@@ -610,7 +657,7 @@ padding: 80px 20px;
   font-size: 12px;
   margin-left:6px;
 }
-/*TRAMA*/
+/* plotInfo */
 .trama{
     color: #fff;
     position: relative;
@@ -618,7 +665,7 @@ padding: 80px 20px;
     font-size: 15px;
     top:-50px;
 }
-/*CAST*/
+/* castList */
 .cast{
     color: #fff;
     position:absolute;
@@ -628,39 +675,46 @@ padding: 80px 20px;
     top:0px;
     
 }
-/*SPACE FOR CAST*/
+
+
 .s-cast span{
   margin-top: 10px;
   padding-left: 8px;
 }
 
-/*TITLE CAST*/
+
 strong{
     color:grey;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .space{
   margin: 8px 16px;
 }
-/*Top*/
+
+/* DIALOG EPISODE LIST */
 .top{
   display: flex;
   justify-content: space-between;
 }
+
 .show{
   border-radius: 4px;
   background-color: #242424;
 }
+
 .show option{
   padding: 60px;
 }
-/*Mid*/
+
+/* midSection */
 .mid{
   display: flex;
   flex-direction: column;
   margin-top: 16px;
 }
+
+/* episodeSettings */
 .episode{
   display: flex;
   align-items: center;
@@ -668,14 +722,17 @@ strong{
   border-top: solid 1px #808080;
   padding: 8px 0;
 }
+
 .episode img{
   height: 80px;
   border-radius: 4px;
   padding-right: 14px;
 }
+
 .episode h3{
   padding-right: 14px;
 }
+
 .description{
   display: flex;
   justify-content: space-between;
@@ -853,7 +910,7 @@ list-style-type: none;
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   /* TitleMainBannerSettings */
