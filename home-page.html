@@ -67,7 +67,7 @@
             </div>
             <!-- BANNER BUTTONS -->
             <div class="banner__buttons">
-                <button class="banner__button" title="btn" id="white-btn"><div><img src="./assets/images/Play.png" alt=""><span>Riproduci</span></div></button>
+                <button class="banner__button" title="button" id="white-btn"><div><img src="./assets/images/Play.png" alt=""><span>Riproduci</span></div></button>
                 <button class="banner__button" title="btn" id="lightgray-btn"><div><img src="./assets/images/Info.png" alt=""><span> Altre info</span></div></button>
             </div>
         </div>
@@ -122,7 +122,7 @@
 
         <!-- NUMBER FILM LIST -->
         <div class="row-number">
-            <h2>La top 10 di oggi in Italia</h2>
+            <h2 class="top10">La top 10 di oggi in Italia</h2>
             <div>
                 <button class="freccia right number"><img src="./assets/images/Vector-right.png" alt="Destra"></button>
                 <button class="freccia left number"><img src="./assets/images/Vector-left.png" alt="Sinistra"></button>
@@ -157,6 +157,83 @@
     </div>
 
     
+    <!--General container-->
+    <div class="dialog-container">
+        <!--Image background container-->
+        <div class="image-b">
+            <img src="./assets/images/breaking-bad.jpeg" alt="breaking-bad" class="img-b"> 
+            <!--Button Play-->
+            <button class="dialog__banner__button" title="btn" id="white-button">
+                <div>
+                    <img src="./assets/images/Play.png" alt="">
+                    <span>Riproduci</span>
+                </div>
+            </button>
+            <!--Button Check-->
+            <button class="check" title="btn">
+                <div>
+                    <img src="./assets/images/check_circle.png" alt="">
+                </div>
+            </button>
+            <!--Button recommend-->
+            <button class="recommend" title="btn">
+                <div>
+                    <img src="./assets/images/recommend.png" alt="">
+                </div>
+            </button>
+            <!--Button close dialog-->
+            <button class="close" title="btn">
+                <div>
+                    <img src="./assets/images/close.png" alt="" id="close-icon">
+                </div>
+            </button>
+        </div>
+        <!-- Dialog Row Information-->
+        <dialog open="" class="row-info">
+            <p class="p-info">99% compatibile</p>
+            <p class="p-info2">2013</p>
+            <p class="p-info3">VM14</p>
+            <p class="p-info2">5 stagioni</p>
+            <p class="p-info4">HD</p>
+            <!--Cast-->
+            <div class="cast">
+                <div class="s-cast">
+                    <strong>Cast:</strong><span>Bryan Cranston,Aaron Paul, Anna Gunn, altro</span> <br>
+                </div>
+                <div class="s-cast">
+                    <strong>Generi:</strong><span>Serie TV crime, Thriller TV, Drammi TV</span><br>
+                </div>
+                <div class="s-cast">
+                    <strong>Caratteristiche:</strong><span>Violento,Crudo,Cupo</span><br>
+                </div>
+                
+            </div>
+        </dialog>
+        <!--Trama-->
+        <p class="trama">
+            Un insegnante di chimica con un cancro allo stadio<br> terminale comincia a
+            produrre e spacciare<br> metanfetamina con un suo ex studente per assicurare
+            <br>un futuro alla famiglia.
+        </p>
+        
+        <!-- LIST EPISODES -->
+        <div class="space">
+            <div class="top">
+                <h3>Episodi</h3>
+                <div class="shows">
+                    <select name="show" id="show" class="show" title="episodes">
+                        <option value="stagione1">Stagione 1</option>
+                        <option value="stagione2">Stagione 2</option>
+                        <option value="stagione3">Stagione 3</option>
+                        <option value="stagione4">Stagione 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mid" id="mid">
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- LAST SECTION LINKS -->

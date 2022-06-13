@@ -9,6 +9,12 @@ let container = document.querySelector(".container");
 let row = document.querySelectorAll(".row");
 let posterContainer = document.querySelector(".row-poster-container");
 let numberContainer = document.querySelector(".container-movie");
+let displayDialogContainer = document.querySelector('.dialog-container');
+let dropDownIcon = document.getElementById('circle-down-icon');
+let closeIcon = document.getElementById('close-icon');
+
+
+
 
 const getMovies = async()=>{
     let resultApi = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
@@ -22,7 +28,6 @@ cardsContainer.forEach((element)=>{
         displayMovies(element, res.results)
     });
 })
-
 
 
 function displayMovies(container, res){
@@ -50,7 +55,7 @@ function displayMovies(container, res){
                         </div>
                         <div class="box-button">
                             <div class="circle-down">
-                                <span class="material-symbols-outlined">
+                                <span class="material-symbols-outlined" id="circle-down-icon">
                                     expand_circle_down</span>
                             </div>
                         </div>
@@ -94,6 +99,7 @@ scrollEffect()
 
 
 
+
 // getMovies().then(res => {
 //     res.results.forEach(element=>{
 //         posterContainer.innerHTML += `
@@ -127,6 +133,7 @@ function displayPosterImages (){
 displayPosterImages ();
 
 
+
 // CARD NUMBER
 // getMovies().then(res => {
 //     res.results.map((element, i)=>{
@@ -156,3 +163,42 @@ function numberListMovie () {
     }
 }
 numberListMovie ();
+
+
+let dialog = document.getElementById('mid');
+
+
+// EPISODE LIST DIALOG
+function episodeListDialog(){
+    for (let i=1; i<6; i++){
+        dialog.innerHTML += 
+        `
+        <div class="episode">
+            <h3>${i}</h3>
+            <img src="./assets/images/New-amsterdam.png" alt="">
+            <div class="description">
+                <h4>Questione di chimica</h4>
+                <p>58min</p>
+                <p>Dopo la diagnosi di cancro terminale ai polmoni, un insegnante di chimica del
+                liceo si da alla produzione di metanfetamina per garanatire la sopravivvenza della
+                famiglia.
+                </p>
+            </div>
+        </div>`
+    }
+};
+episodeListDialog();
+
+
+
+
+
+// DIALOG ACTION
+// function openDialog(){
+//     dropDownIcon.addEventListener('click', () => {
+        // displayDialogContainer.addClassList('display');
+//         alert("Prova");
+//     })
+// }
+
+// openDialog();
