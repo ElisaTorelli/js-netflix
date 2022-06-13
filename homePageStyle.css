@@ -13,7 +13,16 @@
     h)LightGrayButton
   5.CONTAINER
     a)row section
-
+    b)single card section
+  6)HOVER EFFECT ON IMG
+    a)box info section
+    b)box info display when hover on card
+  7)ARROW
+  8)FOOTER
+  9)MEDIA QUERIES (max-width 987px)
+  10)MEDIA QUERIES (max-width 768px)
+  11)MEDIA QUERIES (max-width 768px) for INDEX.HTML
+  12)MEDIA QUERIES (max-width 480px)
 */
 
 
@@ -72,6 +81,11 @@ body {
   background-color: var(--black);
 }
 
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 h1{
   font-size: 50px;
   text-transform: uppercase;
@@ -90,6 +104,9 @@ HOME-PAGE.HTML SETTINGS
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 60px;
+  position: fixed;
+  background-color: var(--black);
 }
 
 .logo {
@@ -126,7 +143,7 @@ HOME-PAGE.HTML SETTINGS
 .right__header__links ul{
   display: flex;
   margin: 6px;
-  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .right__header__links ul li {
@@ -142,7 +159,6 @@ HOME-PAGE.HTML SETTINGS
   width: 100%;
   height: 100%;
   margin-top: -10px;
-  padding-left: 14px;
 }
 
 /* BannerTitleDescription */
@@ -317,52 +333,61 @@ border-bottom-left-radius: 4px;
 border-bottom-right-radius: 4px;
 }
 
-
 .container-button {
 display: flex;
 width: 100%;
 }
+
 .box-button {
 display: flex;
 width: 100%;
 }
+
 .box-button .circle-down {
 display: flex;
 flex-direction: row-reverse;
 width: 100%;
 }
+
 .box-button .material-symbols-outlined {
 font-size: 20px;
 color: var(--light-gray-2);
 }
+
 .section-info {
 font-size: 14px;
 }
+
 .vm14 {
 border: 1px solid var(--gray-1);
 padding: 0 8px;
 }
+
 .section-info .material-symbols-outlined {
 vertical-align: middle;
 color: var(--light-gray-2);
 }
+
 .info {
 margin: 8px 0;
 }
+
 .info p {
 color: green;
 }
+
 .show-description {
 width: 100%;
 font-size: 14px;
 }
+
 .show-description ul {
 display: flex;
 justify-content: space-around;
 }
 
 
-/* freccia  */
+/* ARROW  */
 .freccia {
 padding: 48px 20px;
 text-align: center;
@@ -370,20 +395,25 @@ z-index: 99;
 background: transparent;
 border: none;
 }
+
 .freccia:hover {
 background: rgba(20, 20, 20, 0.5);
 transition: 250ms all;
 }
+
 .freccia.left {
 position: absolute;
 }
+
 .freccia.right {
 position: absolute;
 right: 0;
 }
+
 .freccia.poster {
 padding: 190px 20px;
 }
+
 .freccia.number {
 padding: 80px 20px;
 }
@@ -465,11 +495,6 @@ height: 30%;
 list-style-type: none;
 }
 
-
-
-
-
-
 /************************************************ 
   MEDIA QUERIES (max-width 987px)
 *************************************************/
@@ -508,14 +533,11 @@ list-style-type: none;
   }
 }
 
-
-
 /************************************************ 
   MEDIA QUERIES (max-width 768px)
 *************************************************/
 @media all and (max-width: 768px) {
   /* GeneralSettings */
-  /* .main-header, */
   .top__red__badge,
   .banner__description,
   .left__header__links ul,
@@ -529,7 +551,7 @@ list-style-type: none;
   }
 
   h1{
-    font-size: 24px;
+    font-size: 30px;
     display: flex;
     padding-right: 30px;
     padding-bottom: 50px;
@@ -539,8 +561,10 @@ list-style-type: none;
     padding-top: 15px;
   }
 
-  .netflix__logo{
+  .netflix__logo,
+  .profile__img{
     display: block;
+    z-index: 2;
   }
 
   .right__header__links ul{
@@ -549,10 +573,6 @@ list-style-type: none;
     line-height: 10px;
     align-items: center;
     vertical-align: middle;
-  }
-
-  .ringbell-icon {
-    display: block;
   }
 
   .main-header {
@@ -591,8 +611,6 @@ list-style-type: none;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
   }
-
-
   .footer ul li{
     list-style-type: none;
   }
@@ -609,5 +627,31 @@ list-style-type: none;
   .member-div .btn,
   .addIcon {
     min-height: 10px;
+  }
+}
+
+/************************************************ 
+  MEDIA QUERIES (max-width 480px) for HOME-PAGE.HTML
+*************************************************/
+@media all and (max-width: 480px){
+  .banner__buttons{
+    display: none;
+  }
+
+  /* logo */
+  .netflix__logo{
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+
+  /* filmTitle */
+  h1{
+    font-size: 18px;
+    padding-right: 30px;
+    padding-top: 70px;
+  }
+
+  .poster-container{
+    margin-top: 20px;
   }
 }
