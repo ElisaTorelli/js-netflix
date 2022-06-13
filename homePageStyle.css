@@ -277,10 +277,6 @@ overflow-y: hidden;
 }
 
 
-::-webkit-scrollbar {
-  background: transparent;
-}
-
 .poster-container {
 display: flex;
 }
@@ -416,6 +412,21 @@ padding: 190px 20px;
 
 .freccia.number {
 padding: 80px 20px;
+}
+
+
+/* POSTER IMG */
+.poster-img{
+  height: 300px;
+}
+
+.row-poster-container{
+  display: flex;
+  height: 400px;
+}
+
+.card-poster{
+  max-width: ;
 }
 
 

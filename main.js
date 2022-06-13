@@ -1,5 +1,4 @@
 import { getApiKey } from "./env.js";
-
 let apiKey = getApiKey();
 
 
@@ -8,18 +7,26 @@ let leftArrow = document.querySelector(".left");
 let rightArrow = document.querySelector(".right");
 let container = document.querySelector(".container");
 let row = document.querySelectorAll(".row");
+let posterContainer = document.querySelector(".row-poster-container")
+
 const getMovies = async()=>{
     let resultApi = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
     resultApi = await resultApi.json()
     return resultApi
 }
+
+
 cardsContainer.forEach((element)=>{
     getMovies().then(res => {
         displayMovies(element, res.results)
     });
 })
+
+
+
 function displayMovies(container, res){
     res.forEach(element=>{
+        
         container.innerHTML +=
         `
         <div class="general-container">
@@ -73,6 +80,7 @@ function displayMovies(container, res){
         `
     })
 }
+
 //SCROLL ARROWS
 function scrollEffect(){
     rightArrow.addEventListener("click", ()=>{
@@ -85,4 +93,15 @@ function scrollEffect(){
 scrollEffect()
 
 
-
+// ROW POSTER
+getMovies().then(res => {
+    res.results.forEach(element=>{
+        posterContainer.innerHTML += `
+        <div class="card-container">
+            <div class="card-poster">
+                <img class="poster-img" src="https://image.tmdb.org/t/p/original${element.backdrop_path}" alt="poster1" />
+            </div>
+        </div>
+        `
+    })
+});
