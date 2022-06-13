@@ -3,11 +3,7 @@ import { getApiKey } from "./env.js";
 let apiKey = getApiKey();
 
 
-let cardsContainer = document.querySelector(".poster-container")
-let leftArrow = document.querySelector(".left");
-let rightArrow = document.querySelector(".right");
-let container = document.querySelector(".container");
-let row = document.querySelector(".row");
+
 
 
 const getMovies = async()=>{
