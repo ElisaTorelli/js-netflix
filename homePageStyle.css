@@ -75,6 +75,7 @@ h3 {
   font-family: "Netflix Sans Regular";
   color: var(--white);
   margin-left: 32px;
+  font-size: 16px;
 }
 
 body {
@@ -250,7 +251,7 @@ padding-bottom: 12px;
 /* CONTAINER */
 .container {
 background: transparent;
-margin-top: -50px;
+margin-top: -10px;
 z-index: 99;
 }
 
@@ -260,8 +261,8 @@ z-index: 99;
 
 /* row section */
 .row {
-  margin: 100px 0;
-height: 180px;
+  margin: 40px 0;
+  height: 180px;
 }
 
 .row-poster .card img {
@@ -385,11 +386,13 @@ justify-content: space-around;
 
 /* ARROW  */
 .freccia {
-padding: 48px 20px;
+width: 50px;
+height: 130px;
 text-align: center;
 z-index: 99;
 background: transparent;
 border: none;
+margin-top: 30px;
 }
 
 .freccia:hover {
@@ -399,6 +402,7 @@ transition: 250ms all;
 
 .freccia.left {
 position: absolute;
+left: 0;
 }
 
 .freccia.right {
@@ -407,7 +411,8 @@ right: 0;
 }
 
 .freccia.poster {
-padding: 190px 20px;
+padding: 160px 20px;
+margin: 0;
 }
 
 .freccia.number {
@@ -417,7 +422,9 @@ padding: 80px 20px;
 
 /* POSTER IMG */
 .poster-img{
-  height: 300px;
+  height: 400px;
+  width: 205px;
+  border-radius: 4px;
 }
 
 .row-poster-container{
@@ -425,10 +432,49 @@ padding: 80px 20px;
   height: 400px;
 }
 
-.card-poster{
-  max-width: ;
+
+/* NUMBER IMG */
+/* Row number */
+.row-number {
+  margin-top: 32px;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.container-row {
+  width: 100%;
+  display: flex;
+}
+.row-number::-webkit-scrollbar {
+  background: transparent;
+}
+.container-movie {
+  display: flex;
+}
+.number-movie {
+  display: inline-block;
+  height: 206px;
+  line-height: 206px;
+  font-size: 300px;
+  font-weight: 700;
+  -webkit-text-stroke: 1px white;
+  color: black;
+  position: relative;
+  margin-right: -28px;
+  z-index: 1;
+}
+.movie {
+  position: relative;
+  z-index: 2;
+}
+.cards::-webkit-scrollbar {
+  background: transparent;
 }
 
+.img-number {
+  height: 205px;
+  width: 145px;
+}
 
 /* FOOTER */
 .footer {
