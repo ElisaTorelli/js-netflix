@@ -444,12 +444,15 @@ right: 0;
 }
 
 .freccia.poster {
-padding: 160px 20px;
-margin: 0;
+  padding: 160px 20px;
+  margin: 0;
+  height: 399px;
 }
 
 .freccia.number {
 padding: 80px 20px;
+height: 200px;
+background-color: transparent;
 }
 
 
