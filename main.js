@@ -1,20 +1,15 @@
 import { getApiKey } from "./env.js";
 let apiKey = getApiKey();
 
-
-let cardsContainer = document.querySelectorAll(".poster-container")
-let leftArrow = document.querySelector(".left");
-let rightArrow = document.querySelector(".right");
-let container = document.querySelector(".container");
-let row = document.querySelectorAll(".row");
-let posterContainer = document.querySelector(".row-poster-container");
-let numberContainer = document.querySelector(".container-movie");
-
-let displayDialogContainer = document.querySelector('.dialog-container');
-let dropDownIcon = document.getElementById('circle-down-icon');
-let closeIcon = document.getElementById('close-icon');
-
-
+const cardsContainer = document.querySelectorAll(".poster-container")
+const leftArrow = document.querySelectorAll(".left");
+const rightArrow = document.querySelectorAll(".right");
+const container = document.querySelector(".container");
+const row = document.querySelectorAll(".row");
+const posterContainer = document.querySelector(".row-poster-container");
+const numberContainer = document.querySelector(".container-movie");
+const displayDialogContainer = document.querySelector('.dialog-container');
+const closeIcon = document.querySelector('.close');
 
 
 const getMovies = async()=>{
@@ -24,10 +19,14 @@ const getMovies = async()=>{
 }
 
 
-cardsContainer.forEach((element)=>{
+cardsContainer.forEach((element, i)=>{
     getMovies().then(res => {
         displayMovies(element, res.results)
-    });
+        if(i === cardsContainer.length - 1){
+            let dropDownIcon = document.querySelectorAll('.expandDialog');
+            openDialog(dropDownIcon)
+        }
+    })
 })
 
 
@@ -56,7 +55,7 @@ function displayMovies(container, res){
                         </div>
                         <div class="box-button">
                             <div class="circle-down">
-                                <span class="material-symbols-outlined" id="circle-down-icon">
+                                <span class="material-symbols-outlined expandDialog">
                                     expand_circle_down</span>
                             </div>
                         </div>
@@ -80,25 +79,30 @@ function displayMovies(container, res){
                             </div>
                         </div>
                 </div>
-                <img class="card-container" src="https://image.tmdb.org/t/p/original${element.backdrop_path}"   alt="Snowpiercere"/>
+                <img class="card-container" src="https://image.tmdb.org/t/p/original${element.backdrop_path}" alt="Snowpiercere"/>
             </div>
         </div>
         `
     })
 }
 
+
+
+
 //SCROLL ARROWS
-function scrollEffect(res){
-    rightArrow.addEventListener("click", ()=>{
-        document.querySelector('.cards').scrollLeft += 150;
-    });
-    leftArrow.addEventListener("click", ()=>{
-        document.querySelector('.cards').scrollLeft -= 150;
-    });
+function scrollArrow(){
+    rightArrow.forEach(element=>{
+        element.addEventListener("click", ()=>{
+            element.parentNode.scrollLeft += 150;
+        })
+    })
+    leftArrow.forEach(element=>{
+        element.addEventListener("click", ()=>{
+            element.parentNode.scrollLeft -= 150;
+        })
+    })
 }
-scrollEffect()
-
-
+scrollArrow()
 
 
 // getMovies().then(res => {
@@ -114,13 +118,13 @@ scrollEffect()
 // });
 
 
+
 // ROW POSTER
 let posterArray = ['./assets/images/poster1.png', './assets/images/poster2.png', './assets/images/poster3.png', './assets/images/poster4.png'];
-
 function displayPosterImages (){
     for(let i = 0; i < 5; i++){
         for(let j = 0; j < posterArray.length; j++){
-            posterContainer.innerHTML += 
+            posterContainer.innerHTML +=
             `
                 <div class="card-container">
                     <div class="card-poster">
@@ -132,7 +136,6 @@ function displayPosterImages (){
     }
 }
 displayPosterImages ();
-
 
 
 // CARD NUMBER
@@ -151,7 +154,6 @@ displayPosterImages ();
 
 // CARD NUMBER MOVIE LIST
 let numberArray = ['./assets/images/Movie1.png', './assets/images/Movie2.png', './assets/images/Movie3.png', './assets/images/Movie4.png', './assets/images/Movie1.png', './assets/images/Movie2.png', './assets/images/Movie3.png', './assets/images/Movie4.png', './assets/images/Movie1.png', './assets/images/Movie2.png'];
-
 function numberListMovie () {
     for(let j = 0; j < numberArray.length; j++){
         numberContainer.innerHTML +=
@@ -166,13 +168,12 @@ function numberListMovie () {
 numberListMovie ();
 
 
+
 let dialog = document.getElementById('mid');
-
-
 // EPISODE LIST DIALOG
 function episodeListDialog(){
     for (let i=1; i<6; i++){
-        dialog.innerHTML += 
+        dialog.innerHTML +=
         `
         <div class="episode">
             <h3>${i}</h3>
@@ -192,14 +193,18 @@ episodeListDialog();
 
 
 
-
-
 // DIALOG ACTION
-function openDialog(){
-    dropDownIcon.addEventListener('click', () => {
-        displayDialogContainer.addClassList('display');
-        alert("Prova");
+function openDialog(click){
+    click.forEach(element=>{
+        element.addEventListener("click", ()=>{
+            displayDialogContainer.style.display = "block";
+        })
     })
 }
-
-openDialog();
+// close dialog
+function closeDialog(){
+    closeIcon.addEventListener("click", ()=>{
+        displayDialogContainer.style.display = "none";
+    })
+}
+closeDialog()

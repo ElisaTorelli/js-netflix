@@ -23,7 +23,7 @@
   9.NUMBER IMG
 	a)rowNumber
   10.DIALOG MAIN CONTAINER
-	a)generalDialogContainer
+	  a)generalDialogContainer
     b)backgroundImage
     c)dialogButton
     d)firstIcon
@@ -294,7 +294,7 @@ z-index: 99;
 .row {
   margin: 40px 0;
   height: 180px;
-  position: relative;
+  /* position: relative; */
 }
 
 .row-poster .card img {
@@ -378,6 +378,10 @@ width: 100%;
 .box-button .material-symbols-outlined {
 font-size: 20px;
 color: var(--light-gray-2);
+}
+
+.circle-down{
+  cursor: pointer;
 }
 
 .section-info {
@@ -522,10 +526,6 @@ background-color: transparent;
 
 
 /*DIALOG MAIN CONTAINER*/
-.display{
-  display: block;
-}
-
 /* generalDialogContainer */
 .dialog-container{
   display: none;
@@ -537,7 +537,7 @@ background-color: transparent;
   width: 700px;
   height: 1150px;
   position: absolute;
-  top:70%;
+  top:50%;
   left: 30%;
   margin-top: -100px;
   margin-left: -100px;
@@ -574,18 +574,6 @@ background-color: transparent;
   padding-right: 20px;
 }
 
-/* WhiteButton */
-/* #white-button {
-  color: var(--black);
-  background-color: #fff;
-} */
-
-/* LightGrayButton */
-/* #lightgray-btn {
-  background-color: rgba(121, 112, 112, 0.322);
-  color: var(--white);
-} */
-
 /* firstIcon*/
 .check{
     position: relative;
@@ -608,6 +596,7 @@ background-color: transparent;
 
 /* closeIconOption */
 .close{
+  cursor: pointer;
   position: absolute;
   background-color:transparent;
   border: none;
