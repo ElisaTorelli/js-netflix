@@ -13,7 +13,7 @@ const closeIcon = document.querySelector('.close');
 
 
 const getMovies = async()=>{
-    let resultApi = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&quot`)
+    let resultApi = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3bb82372ef97dc8c0c45d353261e2f31&quot`)
     resultApi = await resultApi.json()
     return resultApi
 }
