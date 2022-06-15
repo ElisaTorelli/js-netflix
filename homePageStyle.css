@@ -740,11 +740,9 @@ strong{
 .footer {
 max-width: 75%;
 margin: 1rem auto;
-overflow: auto;
 }
 
 .last__section__image img{
-
 padding-bottom: 18px;
 padding-top: 24px;
 }
@@ -755,23 +753,6 @@ padding-top: 60px;
 
 .last__section__links ul {
 list-style-type: none;
-}
-
-#list_1 li a,
-#list_2 li a,
-#list_3 li a,
-#list_4 li a {
-padding-top: 24px;
-display: flex;
-flex-direction: column;
-height: 45px;
-font-family: "Netflix Sans Regular";
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-color: var(--gray-1);
-font-size: 16px;
-font-family: "Netflix Sans Regular";
 }
 
 .footer,
